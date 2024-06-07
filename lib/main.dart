@@ -77,51 +77,61 @@ class PruebaScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'Nombre del estudiante: Luis Morales',
-            style: TextStyle(fontSize: 18),
+      body: Container(
+        width:double.infinity,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/fondo01.jpeg'), // Ruta de la imagen local
+            fit: BoxFit.cover,
           ),
-          Text(
-            'Usuario de GitHub: luirimo@hotmail.com',
-            style: TextStyle(fontSize: 18),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    title: Text('Ir al Ejercicio 02'),
-                    content: Text('¿Desea ir al Ejercicio 02?'),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: Text('No'),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Ejercicio02Screen(),
-                            ),
-                          );
-                        },
-                        child: Text('Sí'),
-                      ),
-                    ],
-                  );
-                },
-              );
-            },
-            child: Text('Ir al Ejercicio 02'),
-          ),
-        ],
+        ),
+        child: Column(
+          
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Nombre del estudiante: Luis Morales',
+              style: TextStyle(fontSize: 18),
+            ),
+            Text(
+              'Usuario de GitHub: luirimo@hotmail.com',
+              style: TextStyle(fontSize: 18),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: Text('Ir al Ejercicio 02'),
+                      content: Text('¿Desea ir al Ejercicio 02?'),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: Text('No'),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Ejercicio02Screen(),
+                              ),
+                            );
+                          },
+                          child: Text('Sí'),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
+              child: Text('Ir al Ejercicio 02'),
+            ),
+          ],
+        ),
       ),
     );
   }
